@@ -15,77 +15,95 @@ function getComputerChoice () {
 
 function playRound (playerSelection, computerSelction) {
 
-    let playerWon = 1;
-    let computerWon = 1;
+    let win = 0;
 
     // IN CASE OF A TIE!
     if(((playerSelection == "Rock") && (computerSelction == "Rock")) || ((playerSelection == "Paper") && (computerSelction == "Paper")) || 
     ((playerSelection == "Scissors") && (computerSelction == "Scissors"))) {
         console.log("It's a tie!");
+        win = 0
+        return;
     }
 
     // THE COMPUTER WINS
     else if ((playerSelection == "Scissors") && (computerSelction == "Rock")) {
         console.log("Computer wins! Rock beats Scissors!");
-        return computerWon;
+        win = 1;
+        return win;
     }
     else if ((playerSelection == "Paper") && (computerSelction == "Scissors")) {
         console.log("Computer wins! Scissors beat Paper!");
-        return computerWon;
+        win = 1;
+        return win;
     }
     else if ((playerSelection == "Rock") && (computerSelction == "Paper")) {
         console.log("Computer wins! Paper beats Rock!");
-        return computerWon;
+        win = 1;
+        return win;
     }
 
     // THE PLAYER WINS
     else if ((playerSelection == "Rock") && (computerSelction == "Scissors")) {
         console.log("Player wins! Rock beats Scissors!");
-        return playerWon;
+        win = 2;
+        return win;
     }
     else if ((playerSelection == "Scissors") && (computerSelction == "Paper")) {
         console.log("Player wins! Scissors beat Paper!");
-        return playerWon;
+        win = 2;
+        return win;
     }
     else if ((playerSelection == "Paper") && (computerSelction == "Rock")) {
         console.log("Player wins! Paper beats Rock!");
-        return playerWon;
+        win = 2;
+        return win;
     }
 }
 
-function gameToFive(playerWon, computerWon) {
+function gameToFive(win) {
     let playerScore = 0;
     let computerScore = 0;
 
-    playRound();
-    if(playerWon == 1)
+    playRound(playerSelection, computerSelction);
+    if(win == 2){
         playerScore++;
-    else
-    computerScore++;
-    playRound();
-    if(playerWon == 1)
-        playerScore++;
-    else
+    }
+    else if(win == 1) {
         computerScore++;
-        playRound();
-    if(playerWon == 1)
+    }
+    playRound(playerSelection, computerSelction);
+    if(win == 2){
         playerScore++;
-    else
+    }
+    else if(win == 1) {
         computerScore++;
-        playRound();
-    if(playerWon == 1)
+    }
+    playRound(playerSelection, computerSelction);
+    if(win == 2){
         playerScore++;
-    else
+    }
+    else if(win == 1) {
         computerScore++;
-        playRound();
-    if(playerWon == 1)
+    }
+    playRound(playerSelection, computerSelction);
+    if(win == 2){
         playerScore++;
-    else
+    }
+    else if(win == 1) {
         computerScore++;
+    }
+    playRound(playerSelection, computerSelction);
+    if(win == 2){
+        playerScore++;
+    }
+    else if(win == 1) {
+        computerScore++;
+    }
 
-    if(playerScore === 5 && computerScore < 5)
+
+    if((playerScore == 5) && (computerScore < 5))
         return "Player Wins!";
-    else if (computerScore === 5 && playerScore < 5)
+    else if ((computerScore == 5) && (playerScore < 5))
         return "Computer wins!";
 }
 
