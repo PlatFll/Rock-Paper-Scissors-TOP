@@ -64,6 +64,8 @@ function gameToFive(win) {
     let playerScore = 0;
     let computerScore = 0;
 
+    let playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
+    let computerSelction = getComputerChoice();
     playRound(playerSelection, computerSelction);
     if(win == 2){
         playerScore++;
@@ -71,6 +73,9 @@ function gameToFive(win) {
     else if(win == 1) {
         computerScore++;
     }
+
+    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
+    computerSelction = getComputerChoice();
     playRound(playerSelection, computerSelction);
     if(win == 2){
         playerScore++;
@@ -78,6 +83,9 @@ function gameToFive(win) {
     else if(win == 1) {
         computerScore++;
     }
+
+    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
+    ccomputerSelction = getComputerChoice();
     playRound(playerSelection, computerSelction);
     if(win == 2){
         playerScore++;
@@ -85,6 +93,9 @@ function gameToFive(win) {
     else if(win == 1) {
         computerScore++;
     }
+
+    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
+    computerSelction = getComputerChoice();
     playRound(playerSelection, computerSelction);
     if(win == 2){
         playerScore++;
@@ -92,6 +103,9 @@ function gameToFive(win) {
     else if(win == 1) {
         computerScore++;
     }
+
+    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
+    computerSelction = getComputerChoice();
     playRound(playerSelection, computerSelction);
     if(win == 2){
         playerScore++;
@@ -101,16 +115,16 @@ function gameToFive(win) {
     }
 
 
-    if((playerScore == 5) && (computerScore < 5))
-        return "Player Wins!";
-    else if ((computerScore == 5) && (playerScore < 5))
-        return "Computer wins!";
+
+    if((playerScore > computerScore))
+        return "Player Wins overall!";
+    else if ((computerScore > playerScore))
+        return "Computer wins overall!";
 }
 
 // console.log(getComputerChoice());
 
-const playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
-const computerSelction = getComputerChoice();
+
 
 //console.log(playRound(playerSelection, computerSelction))
-console.log(gameToFive());
+console.log(gameToFive(2));
