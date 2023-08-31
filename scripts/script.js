@@ -64,62 +64,26 @@ function gameToFive(win) {
     let playerScore = 0;
     let computerScore = 0;
 
-    let playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
-    let computerSelction = getComputerChoice();
-    playRound(playerSelection, computerSelction);
-    if(win == 2){
-        playerScore++;
+    for(let i = 0; i < 5; i++) {
+        let playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
+        let computerSelction = getComputerChoice();
+        const win = playRound(playerSelection, computerSelction);
+        if(win == 2){
+            playerScore++;
+        }
+        else if(win == 1) {
+            computerScore++;
+        }
     }
-    else if(win == 1) {
-        computerScore++;
-    }
-
-    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
-    computerSelction = getComputerChoice();
-    playRound(playerSelection, computerSelction);
-    if(win == 2){
-        playerScore++;
-    }
-    else if(win == 1) {
-        computerScore++;
-    }
-
-    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
-    ccomputerSelction = getComputerChoice();
-    playRound(playerSelection, computerSelction);
-    if(win == 2){
-        playerScore++;
-    }
-    else if(win == 1) {
-        computerScore++;
-    }
-
-    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
-    computerSelction = getComputerChoice();
-    playRound(playerSelection, computerSelction);
-    if(win == 2){
-        playerScore++;
-    }
-    else if(win == 1) {
-        computerScore++;
-    }
-
-    playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
-    computerSelction = getComputerChoice();
-    playRound(playerSelection, computerSelction);
-    if(win == 2){
-        playerScore++;
-    }
-    else if(win == 1) {
-        computerScore++;
-    }
-
 
 
     if((playerScore > computerScore))
         return "Player Wins overall!";
     else if ((computerScore > playerScore))
         return "Computer wins overall!";
+    else 
+        return "It's a draw overall!"
+
 }
 
 // console.log(getComputerChoice());
@@ -127,4 +91,4 @@ function gameToFive(win) {
 
 
 //console.log(playRound(playerSelection, computerSelction))
-console.log(gameToFive(2));
+console.log(gameToFive(playRound()));
