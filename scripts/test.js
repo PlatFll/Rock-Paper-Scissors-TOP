@@ -36,4 +36,8 @@ newDiv.appendChild(divP);
 
 container.appendChild(newDiv);
 
+btn.addEventListener('click', function (e) {
+    console.log(e.target);
+  });
+
 
