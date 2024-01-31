@@ -1,65 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping list example</title>
-    <style>
-      li {
-        margin-bottom: 10px;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <html lang="en-US">
+<head>
+  <meta charset="utf-8">
+    <script type="text/javascript" src="./scripts/script.js"></script>
+    <!-- <script type="text/javascript" src="./scripts/test.js" defer></script> -->
+    <title>Document</title>
+</head>
+<body>
 
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
-
-    <h1>My shopping list</h1>
-
-    <div>
-      <label for="item">Enter a new item:</label>
-      <input type="text" name="item" id="item">
-      <button>Add item</button>
-    </div>
-
-    <ul>
-
-    </ul>
-
-    <script>
-        const uList = document.querySelector("ul");
-        const inputList = document.querySelector("input");
-        const button = document.querySelector("button");
-
-        button.addEventListener('click' , doSomething);
-        
-        function doSomething() {
-            const newItem = inputList.value;
-            inputList.value = '';
-
-            const listItem = document.createElement("li");
-            const deleteButton = document.createElement("button");
-            const listSpan = document.createElement("span");
-
-            listItem.appendChild(deleteButton);
-            listItem.appendChild(listSpan);
-
-            listSpan.textContent = newItem;
-            deleteButton.textContent = "Delete";
-
-            uList.appendChild(listItem);
-
-            deleteButton.addEventListener("click" , () => {
-              uList.removeChild(listItem);
-            });
-
-            inputList.focus();
-            
-      }
-    </script>
-  </body>
+</body>
 </html>
