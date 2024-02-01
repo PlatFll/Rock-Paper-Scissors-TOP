@@ -31,20 +31,30 @@ function getComputerChoice () {
 
     if(num <= 3){
         randomChoice = "Rock";
+        computerChoice.textContent = "Computer played rock!";
     } else if (num <= 6) {
         randomChoice = "Paper";
+        computerChoice.textContent = "Computer played paper!";
     } else if (num <= 10) {
         randomChoice = "Scissors";
+        computerChoice.textContent = "Computer played scissors!";
     }
 
     return randomChoice;
 }  
 
+//This function was buggy!
 function announceComputerChoice() {
     let choice = getComputerChoice();
 
     if(choice == "Rock"){
-        computerChoice.textContent = "Computer played rock!"
+        computerChoice.textContent = "Computer played rock!";
+    }
+    else if(choice == "Paper"){
+        computerChoice.textContent = "Computer played paper!";
+    }
+    else if(choice == "Scissors"){
+        computerChoice.textContent = "Computer played scissors!";
     }
 }
 
@@ -103,21 +113,23 @@ function playRound (playerSelection, computerSelction) {
     }
 }
 
-// function gameToFive(win) {
-//     let playerScore = 0;
-//     let computerScore = 0;
+//No need to use to for now
+function gameToFive(win) {
+    let playerScore = 0;
+    let computerScore = 0;
 
-//     for(let i = 0; i < 5; i++) {
-//         let playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
-//         let computerSelction = getComputerChoice();
-//         const win = playRound(playerSelection, computerSelction);
-//         if(win == 2){
-//             playerScore++;
-//         }
-//         else if(win == 1) {
-//             computerScore++;
-//         }
-//     }
+    for(let i = 0; i < 5; i++) {
+        let playerSelection = prompt("What's your choice? Rock, Paper or Scissors!?: ");
+        let computerSelction = getComputerChoice();
+        const win = playRound(playerSelection, computerSelction);
+        if(win == 2){
+            playerScore++;
+        }
+        else if(win == 1) {
+            computerScore++;
+        }
+    }
+}
 
 
 //     if((playerScore > computerScore))
